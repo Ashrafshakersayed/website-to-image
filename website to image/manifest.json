@@ -1,0 +1,39 @@
+{
+"manifest_version": 2,
+"name": "site screenshot",
+"version": "0.2.1",
+"description": "lets you screen-capture beautiful and high-resolution screenshot images of any web page on the Internet. You can screenshot tweets, news articles, photo galleries and everything that's public online.",
+
+"content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+
+      "js": ["script.js" ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+     "<all_urls>",
+    "storage",
+    "activeTab"
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "browser_action": {
+    "default_title": "Take screenshot now",
+
+    "default_icon": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+    }
+
+}
